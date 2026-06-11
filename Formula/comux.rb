@@ -1,8 +1,8 @@
 class Comux < Formula
   desc "Local-first AI orchestrator that runs coding agents visibly inside cmux"
   homepage "https://github.com/adulwitkku/comux"
-  url "https://github.com/adulwitkku/comux/archive/refs/tags/v0.2.14.tar.gz"
-  sha256 "8bd62f35dace2d3b054f22e251533a21ff3b1cdd7201220245a8edc4f40fb339"
+  url "https://github.com/adulwitkku/comux/archive/refs/tags/v0.2.15.tar.gz"
+  sha256 "ce51215c39bbc5fce20eb10f81fe15f6d74107681c71fa3613eb3ed361ebe458"
   license "MIT"
 
   depends_on "bun"
@@ -10,7 +10,7 @@ class Comux < Formula
   def install
     # comux has no runtime npm dependencies; it shells out to cmux/git/agent CLIs and
     # talks to Ollama over HTTP. Ship the source and run it with bun via a thin wrapper.
-    libexec.install "src", "scripts", "package.json", "README.md", "LICENSE"
+    libexec.install "src", "scripts", "dashboard", "package.json", "README.md", "LICENSE"
     (bin/"comux").write <<~SH
       #!/bin/bash
       exec "#{Formula["bun"].opt_bin}/bun" "#{libexec}/scripts/harness.ts" "$@"
@@ -24,6 +24,9 @@ class Comux < Formula
         - cmux   (the terminal it drives):      https://cmux.com
         - Ollama serving the Orchestrator:      ollama pull gemma4:12b-mlx
         - an Agent CLI on PATH:                 pi  (https://pi.dev)
+
+      For `comux dashboard`, install dashboard deps once:
+        bun install --cwd $(brew --prefix comux)/libexec/dashboard
     EOS
   end
 
