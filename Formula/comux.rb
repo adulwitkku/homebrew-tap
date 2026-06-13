@@ -1,8 +1,8 @@
 class Comux < Formula
   desc "Local-first AI orchestrator that runs coding agents visibly inside cmux"
   homepage "https://github.com/adulwitkku/comux"
-  url "https://github.com/adulwitkku/comux/archive/refs/tags/v0.2.17.tar.gz"
-  sha256 "eb04fe0217b7fb7d2d5bce4638cb4e4f695ca8ff669dd1db9dfa595bb5f8a5ed"
+  url "https://github.com/adulwitkku/comux/archive/refs/tags/v0.2.18.tar.gz"
+  sha256 "ae3994256b44d2e0bf4988cce17f07ba728f7a7f22e53a52115e01ca6afbfd19"
   license "MIT"
 
   depends_on "bun"
@@ -25,8 +25,8 @@ class Comux < Formula
         - Ollama serving the Orchestrator:      ollama pull gemma4:12b-mlx
         - an Agent CLI on PATH:                 pi  (https://pi.dev)
 
-      For `comux dashboard`, install dashboard deps once:
-        bun install --cwd $(brew --prefix comux)/libexec/dashboard
+      For `comux dashboard`, dependencies auto-install on first launch.
+      To pre-install: bun install --cwd $(brew --prefix comux)/libexec/dashboard
     EOS
   end
 
