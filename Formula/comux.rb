@@ -1,8 +1,8 @@
 class Comux < Formula
   desc "Local-first AI orchestrator that runs coding agents visibly inside cmux"
   homepage "https://github.com/adulwitkku/comux"
-  url "https://github.com/adulwitkku/comux/archive/refs/tags/v0.2.30.tar.gz"
-  sha256 "f6ca5dee25adcd5f0c96992522bb98d9b9e647c9c856fa2de339b87c811ac0ef"
+  url "https://github.com/adulwitkku/comux/archive/refs/tags/v0.2.31.tar.gz"
+  sha256 "f90fd65b218d41f0516eb636a164ee24990bbc52f8b7b1a137eb7ebdb317b703"
   license "MIT"
 
   depends_on "bun"
